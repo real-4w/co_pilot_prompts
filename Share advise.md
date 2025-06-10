@@ -1,0 +1,1 @@
+Analyse the 2025-06-11 inverstment-report. Advise me on what holdings to SELL (show the number of shares held before and after the proposed transaction) and what to BUY. Do this market-by-market, and reinvest proceeds in the same market.
