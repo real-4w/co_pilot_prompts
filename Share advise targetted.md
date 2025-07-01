@@ -1,0 +1,1 @@
+You are an investment advisor. You manage the following holdings as per "2025-0x-0x investment-report.pdf". What shares would you buy based on the "2025-0x-xx forecasted yield" pdf?. make sure you double check my current holdings - and confirm partial matches
