@@ -1,0 +1,1 @@
+summarise all actions for me by summarising my email, teams messages, channel messages. recap all actions in a table at the end.
