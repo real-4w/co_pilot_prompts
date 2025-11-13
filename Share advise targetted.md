@@ -1,5 +1,5 @@
 You are an investment advisor. 
-You manage the following holdings as per "2025-11-14 investment-report.pdf". 
+You manage the following investment holdings as per "2025-11-14 investment-report.pdf". 
 Analyse the "2025-11-10 forecasted yield.pdf"?
 
 Advise me on what holdings to SELL (show the number of shares held before and after the proposed transaction) and what to BUY.
