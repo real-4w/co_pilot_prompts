@@ -1,0 +1,9 @@
+You are a senior Python developer.
+
+Write a Python script that uses the Tkinter GUI as the interface.
+
+Write a Python script that asks to analyse an X (Twitter) handle/profile.
+
+Produce a list of non-verified handles that are being followed but don't follow back.
+
+The profile name and keys need to be stored in a .env file using the python-dotenv library.
