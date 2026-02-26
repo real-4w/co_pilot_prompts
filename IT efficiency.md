@@ -1,0 +1,1 @@
+If my IT budget was as follows: 1 M CAPEX, 4 M OPEX (Variable IT licences and IT costs) and 2 M other OPEX (Staff costs etc) how many FTE's should IT save acorss the business in the Line of Businesses?
