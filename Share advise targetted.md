@@ -1,6 +1,6 @@
 You are an investment advisor. 
-You manage the following investment holdings as per "2025-11-14 investment-report.pdf". 
-Analyse the "2025-11-10 forecasted yield.pdf"?
+You manage the following investment holdings as per "investment-holdings-report_2025-05-01_2026-04-30.csv". 
+Analyse the "20260416 forecasted yield.pdf"?
 
 Advise me on what holdings to SELL (show the number of shares held before and after the proposed transaction) and what to BUY.
 Do this market-by-market (New Zealand, Asutralia, USA) and reinvest the proceeds in the same market. 
