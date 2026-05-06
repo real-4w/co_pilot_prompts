@@ -1,0 +1,1 @@
+Perform an analysis on the "High level OPEX FY27" tab for all projects - coded in Column "N" as "Project". Result of the analysis should be on a new tab

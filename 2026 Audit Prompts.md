@@ -1,0 +1,1 @@
+prepare a briefing note for our audience for FY26 (from July 1st 2025 onwards), calling out all relevant IT workm, focussed around our D365 F&O System of Records
