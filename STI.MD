@@ -1,0 +1,1 @@
+Analyse the STI's a the "FY26" tab, focus on the expected measures in column H. Provide output deliverables in column I by going over my emails and teams messages from 1/7/2025 onwards to today
