@@ -1,5 +1,3 @@
-The key is to make Cowork identify the PO first, show only lines still available to receipt, and require you to choose the line and quantity before posting.
-
 Prompt for PO receipting in D365 F&O
 Receipt goods/services against a purchase order in D365 F&O.
 
@@ -73,6 +71,3 @@ After successfully posting, return:
 - D365 posting status
 
 If anything prevents the receipt from being posted, do not attempt to work around the control. Tell me exactly what validation or D365 error is preventing the receipt.
-
-
-This version deliberately makes quantity, price and description visible before selection, while treating price and description as validation fields rather than allowing Cowork to alter them during receipting.

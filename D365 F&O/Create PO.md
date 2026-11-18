@@ -1,6 +1,3 @@
-For Cowork, I’d make the prompt prescriptive enough that it asks only for the two genuinely variable inputs, then creates and validates the PO.
-
-Recommended prompt
 Create a purchase order in D365 F&O.
 
 Before creating the purchase order, ask me for these two required inputs:
@@ -60,6 +57,3 @@ Delivery date:
 Ask me to confirm before performing the final action.
 
 After successful creation, return the D365 purchase order number and its current status.
-
-
-I would deliberately keep vendor and description as the first two questions, while preventing Cowork from inventing values for price, quantity, delivery or accounting fields. That makes the prompt reusable and considerably safer for live D365 F&O use.

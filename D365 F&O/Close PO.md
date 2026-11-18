@@ -75,5 +75,4 @@ Also confirm:
 
 If D365 F&O does not allow the PO to be closed because of an outstanding receipt, invoice, workflow, matching, accounting or other condition, stop and tell me exactly what is preventing closure. Do not work around the control without asking me.
 
-
 The important distinction here is between “fully received” and “finished with”. If, for example, a PO was for 100 hours but only 80 were ultimately required, Cowork should receipt the genuine 80 and close/cancel the remaining 20, not falsely receipt 100.
