@@ -1,78 +1,79 @@
-The key is to make Cowork identify the PO first, show only lines still available to receipt, and require you to choose the line and quantity before posting.
-
-Prompt for PO receipting in D365 F&O
-Receipt goods/services against a purchase order in D365 F&O.
+Prompt: Close a fully receipted PO
+Close a purchase order in D365 F&O because it has been fully receipted and no further goods, services, receipts or invoices are expected against the remaining commitment.
 
 Start by asking me:
 
-"What PO number would you like to receipt against?"
+"What PO number would you like to close?"
 
 Once I provide the PO number:
 
 1. Find the purchase order in D365 F&O.
-2. Confirm the PO is valid and available for receipting.
-3. Retrieve all PO lines that still have a quantity available to receipt.
-4. Do not include fully receipted or cancelled lines unless necessary to explain the PO status.
+2. Retrieve the PO header and all PO lines.
+3. Check the current status of each line.
+4. Confirm what has been ordered and receipted.
 
-Present the available lines in this format:
+Present the PO lines in this format:
 
-Line | Description | Ordered Qty | Previously Received | Qty Remaining | Unit Price | Line Value
+Line | Description | Ordered Qty | Received Qty | Remaining Qty | Unit Price | Remaining Value | Status
 
-For example:
+Then validate that the PO is appropriate to close.
 
-1 | Microsoft consulting services | 10 | 4 | 6 | $250.00 | $2,500.00
-2 | Project management services | 5 | 0 | 5 | $180.00 | $900.00
+Specifically check:
 
-Then ask:
+- The PO has been fully receipted for everything that was actually supplied.
+- There are no additional goods or services expected against the PO.
+- There are no additional receipts expected.
+- Identify any remaining unreceipted quantities or values.
+- Identify any open PO lines.
+- Identify anything that would prevent the PO from being closed or finalised in D365 F&O.
 
-"Which line(s) would you like to receipt, and what quantity should I receipt against each line?"
+If there are remaining quantities because the original PO quantity was greater than what was ultimately supplied, clearly identify those quantities rather than receipting them.
 
-Allow me to select one or multiple lines and specify a receipt quantity for each.
+Never create a receipt for goods or services that were not actually received merely to bring the remaining quantity to zero.
 
-Before proceeding, validate that:
-
-- The selected PO line is open for receipting.
-- The receipt quantity does not exceed the remaining quantity unless over-delivery is explicitly permitted in D365.
-- The unit price matches the PO line.
-- The description matches the PO line.
-- The PO has not been cancelled or closed.
-- The selected quantity has not already been receipted.
-
-Before posting the receipt, show me a final summary:
+Before making any change, show me a summary:
 
 PO:
 Vendor:
+PO status:
+Original PO value:
+Total received:
+Remaining quantity/value:
 
-Line:
-Description:
-Quantity being receipted:
-Unit price:
-Receipt value:
-Remaining quantity after receipt:
+Lines still showing a remaining commitment:
+[show each applicable line]
 
-Total receipt value:
+Then ask me:
 
-Ask:
+"Please confirm that everything actually supplied against this PO has been receipted and that nothing further will be supplied or receipted against this PO. Should I close the remaining PO quantities?"
 
-"Confirm that you want me to post this receipt."
+Only proceed when I explicitly confirm.
 
-Do not post the receipt until I explicitly confirm.
+After confirmation:
 
-Once confirmed, create/post the product receipt in D365 F&O.
+- Close/cancel the outstanding quantity on any remaining PO lines using the appropriate D365 F&O process.
+- Do not create additional product receipts.
+- Do not change quantities already receipted.
+- Do not alter historical product receipts.
+- Do not change prices simply to make the PO balance.
+- Ensure the remaining purchase commitment is removed appropriately.
+- Complete/finalise the PO if that is the appropriate D365 F&O status/process.
 
-If D365 requires a Product Receipt / Packing Slip number, ask me for it unless there is an established system-generated value or business rule that can be safely used.
+After completion, verify the result and return:
 
-After successfully posting, return:
+PO:
+Vendor:
+Final PO status:
+Total quantity/value received:
+Quantity/value closed without receipt:
+Remaining open quantity: 0
+Remaining open commitment: 0
 
-- PO number
-- Product receipt / packing slip number
-- Lines and quantities receipted
-- Total receipt value
-- Remaining quantity on each affected PO line
-- Receipt/posting date
-- D365 posting status
+Also confirm:
 
-If anything prevents the receipt from being posted, do not attempt to work around the control. Tell me exactly what validation or D365 error is preventing the receipt.
+"No further receipts can be posted against this PO in its current status."
+
+If D365 F&O does not allow the PO to be closed because of an outstanding receipt, invoice, workflow, matching, accounting or other condition, stop and tell me exactly what is preventing closure. Do not work around the control without asking me.
 
 
-This version deliberately makes quantity, price and description visible before selection, while treating price and description as validation fields rather than allowing Cowork to alter them during receipting.
+The important distinction here is between “fully received” and “finished with”. If, for example, a PO was for 100 hours but only 80 were ultimately required, Cowork should receipt the genuine 80 and close/cancel the remaining 20, not falsely receipt 100.
